@@ -382,7 +382,7 @@
     // TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_lctZp661QwHG_nt9CpDgf3f0-KPEC88RWbI9QLIzFniknBjovRKF_gzOm_RbDHe0/exec";
 
-    document.getElementById("studentForm").addEventListener("submit", function(e) {
+    document.querySelector("form").addEventListener("submit", function(e) {
       e.preventDefault();
       
       const btn = document.getElementById("btnSubmit");
