@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Data Siswa - UPTD SPF SDN Lanto Dg Pasewang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-2xl shadow-xl">
+    
+    <!-- Header -->
+    <div class="text-center border-b pb-6 mb-8">
+      <h2 class="text-lg font-semibold text-blue-800 tracking-wide uppercase">UPTD SPF SDN LANTO DG PASEWANG</h2>
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">FORMULIR DATA SISWA DAN ORANG TUA/WALI</h1>
+      <div class="mt-4 inline-flex items-center gap-2">
+        <label class="text-sm font-medium text-gray-700">Tahun Pelajaran:</label>
+        <input type="text" id="tahun_pelajaran" name="tahun_pelajaran" placeholder="2024 / 2025" required class="border-gray-300 border rounded-lg px-3 py-1 text-sm focus:ring-blue-500 focus:border-blue-500">
+      </div>
+    </div>
+
+    <form id="studentForm" class="space-y-8">
+      
+      <!-- A. IDENTITAS SISWA -->
+      <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+        <h3 class="text-lg font-bold text-blue-900 border-b border-blue-200 pb-2 mb-4">A. IDENTITAS SISWA</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-medium text-gray-700">Nama Lengkap Siswa *</label>
+            <input type="text" name="nama_siswa" required class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Panggilan</label>
+            <input type="text" name="nama_panggilan" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">NISN</label>
+            <input type="text" name="nisn" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">NIS / Nomor Induk Sekolah</label>
+            <input type="text" name="nis" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Tempat, Tanggal Lahir</label>
+            <input type="text" name="ttl_siswa" placeholder="Makassar, 10 Januari 2015" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Jenis Kelamin</label>
+            <select name="jk" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+              <option value="">-- Pilih --</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Agama</label>
+            <input type="text" name="agama" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Kewarganegaraan</label>
+            <input type="text" name="kewarganegaraan" value="WNI" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Anak ke- / Jumlah Saudara</label>
+            <input type="text" name="anak_ke" placeholder="2 dari 3 bersaudara" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Bahasa Sehari-hari di Rumah</label>
+            <input type="text" name="bahasa" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Asal Sekolah (jika pindahan)</label>
+            <input type="text" name="asal_sekolah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Kelas / Rombongan Belajar</label>
+            <input type="text" name="kelas" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-medium text-gray-700">Alamat Lengkap Siswa</label>
+            <textarea name="alamat_siswa" rows="2" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm"></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Kelurahan / Kecamatan / Kota</label>
+            <input type="text" name="wilayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Kode Pos</label>
+            <input type="text" name="kode_pos" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Tinggal Bersama</label>
+            <div class="flex flex-wrap gap-4 text-sm">
+              <label class="inline-flex items-center"><input type="radio" name="tinggal_bersama" value="Ayah-Ibu" class="mr-1"> Ayah-Ibu</label>
+              <label class="inline-flex items-center"><input type="radio" name="tinggal_bersama" value="Ayah" class="mr-1"> Ayah</label>
+              <label class="inline-flex items-center"><input type="radio" name="tinggal_bersama" value="Ibu" class="mr-1"> Ibu</label>
+              <label class="inline-flex items-center"><input type="radio" name="tinggal_bersama" value="Wali" class="mr-1"> Wali</label>
+              <label class="inline-flex items-center"><input type="radio" name="tinggal_bersama" value="Lainnya" class="mr-1"> Lainnya</label>
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-medium text-gray-700">Kebutuhan/hal penting yang perlu diketahui sekolah (opsional)</label>
+            <textarea name="kebutuhan_khusus" rows="2" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- B. DATA AYAH -->
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-lg font-bold text-gray-900 border-b border-gray-300 pb-2 mb-4">B. DATA AYAH</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Lengkap Ayah</label>
+            <input type="text" name="nama_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Status Ayah</label>
+            <select name="status_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Kandung">Kandung</option>
+              <option value="Tiri">Tiri</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">NIK Ayah (opsional)</label>
+            <input type="text" name="nik_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Tempat, Tanggal Lahir</label>
+            <input type="text" name="ttl_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Pendidikan Terakhir</label>
+            <select name="pendidikan_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Tidak sekolah">Tidak sekolah</option>
+              <option value="SD">SD</option>
+              <option value="SMP">SMP</option>
+              <option value="SMA/SMK">SMA/SMK</option>
+              <option value="D1/D2/D3">D1/D2/D3</option>
+              <option value="S1">S1</option>
+              <option value="S2">S2</option>
+              <option value="S3">S3</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Pekerjaan</label>
+            <select name="pekerjaan_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="PNS/ASN">PNS/ASN</option>
+              <option value="TNI/Polri">TNI/Polri</option>
+              <option value="Karyawan swasta">Karyawan swasta</option>
+              <option value="Wiraswasta">Wiraswasta</option>
+              <option value="Petani/Nelayan">Petani/Nelayan</option>
+              <option value="Buruh">Buruh</option>
+              <option value="Tidak bekerja">Tidak bekerja</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Instansi/Tempat Kerja</label>
+            <input type="text" name="instansi_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nomor WhatsApp Aktif Ayah</label>
+            <input type="tel" name="wa_ayah" placeholder="08xxxxxxxxxx" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+        </div>
+      </div>
+
+      <!-- C. DATA IBU -->
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-lg font-bold text-gray-900 border-b border-gray-300 pb-2 mb-4">C. DATA IBU</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Lengkap Ibu</label>
+            <input type="text" name="nama_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Status Ibu</label>
+            <select name="status_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Kandung">Kandung</option>
+              <option value="Tiri">Tiri</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">NIK Ibu (opsional)</label>
+            <input type="text" name="nik_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Tempat, Tanggal Lahir</label>
+            <input type="text" name="ttl_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Pendidikan Terakhir</label>
+            <select name="pendidikan_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Tidak sekolah">Tidak sekolah</option>
+              <option value="SD">SD</option>
+              <option value="SMP">SMP</option>
+              <option value="SMA/SMK">SMA/SMK</option>
+              <option value="D1/D2/D3">D1/D2/D3</option>
+              <option value="S1">S1</option>
+              <option value="S2">S2</option>
+              <option value="S3">S3</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Pekerjaan</label>
+            <select name="pekerjaan_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="IRT">Ibu Rumah Tangga (IRT)</option>
+              <option value="PNS/ASN">PNS/ASN</option>
+              <option value="TNI/Polri">TNI/Polri</option>
+              <option value="Karyawan swasta">Karyawan swasta</option>
+              <option value="Wiraswasta">Wiraswasta</option>
+              <option value="Petani/Nelayan">Petani/Nelayan</option>
+              <option value="Buruh">Buruh</option>
+              <option value="Tidak bekerja">Tidak bekerja</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Instansi/Tempat Kerja</label>
+            <input type="text" name="instansi_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nomor WhatsApp Aktif Ibu</label>
+            <input type="tel" name="wa_ibu" placeholder="08xxxxxxxxxx" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+        </div>
+      </div>
+
+      <!-- D. DATA WALI -->
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-lg font-bold text-gray-900 border-b border-gray-300 pb-2 mb-4">D. DATA WALI <span class="text-xs font-normal text-gray-500">(Diisi jika siswa tinggal/diwakili wali)</span></h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Lengkap Wali</label>
+            <input type="text" name="nama_wali" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Hubungan dengan Siswa</label>
+            <input type="text" name="hubungan_wali" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nomor WhatsApp Aktif Wali</label>
+            <input type="tel" name="wa_wali" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Pendidikan Terakhir</label>
+            <select name="pendidikan_wali" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Tidak sekolah">Tidak sekolah</option>
+              <option value="SD">SD</option>
+              <option value="SMP">SMP</option>
+              <option value="SMA/SMK">SMA/SMK</option>
+              <option value="D1/D2/D3">D1/D2/D3</option>
+              <option value="S1">S1</option>
+              <option value="S2">S2</option>
+              <option value="S3">S3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- E. KONDISI EKONOMI KELUARGA -->
+      <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+        <h3 class="text-lg font-bold text-blue-900 border-b border-blue-200 pb-2 mb-4">E. KONDISI EKONOMI KELUARGA</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Penghasilan Ayah / Bulan</label>
+            <select name="penghasilan_ayah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Tidak ada">Tidak ada</option>
+              <option value="< Rp1.000.000">&lt; Rp1.000.000</option>
+              <option value="Rp1.000.000–2.000.000">Rp1.000.000–2.000.000</option>
+              <option value="Rp2.000.001–3.000.000">Rp2.000.001–3.000.000</option>
+              <option value="Rp3.000.001–5.000.000">Rp3.000.001–5.000.000</option>
+              <option value="> Rp5.000.000">&gt; Rp5.000.000</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Penghasilan Ibu / Bulan</label>
+            <select name="penghasilan_ibu" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Tidak ada">Tidak ada</option>
+              <option value="< Rp1.000.000">&lt; Rp1.000.000</option>
+              <option value="Rp1.000.000–2.000.000">Rp1.000.000–2.000.000</option>
+              <option value="Rp2.000.001–3.000.000">Rp2.000.001–3.000.000</option>
+              <option value="Rp3.000.001–5.000.000">Rp3.000.001–5.000.000</option>
+              <option value="> Rp5.000.000">&gt; Rp5.000.000</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Total Penghasilan Keluarga / Bulan</label>
+            <select name="total_penghasilan" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="< Rp1.000.000">&lt; Rp1.000.000</option>
+              <option value="Rp1.000.000–2.000.000">Rp1.000.000–2.000.000</option>
+              <option value="Rp2.000.001–3.000.000">Rp2.000.001–3.000.000</option>
+              <option value="Rp3.000.001–5.000.000">Rp3.000.001–5.000.000</option>
+              <option value="> Rp5.000.000">&gt; Rp5.000.000</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Jumlah Tanggungan Keluarga</label>
+            <input type="number" name="jumlah_tanggungan" placeholder="Orang" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Kepemilikan Tempat Tinggal</label>
+            <select name="rumah" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+              <option value="">-- Pilih --</option>
+              <option value="Milik sendiri">Milik sendiri</option>
+              <option value="Sewa/Kontrak">Sewa/Kontrak</option>
+              <option value="Menumpang">Menumpang</option>
+              <option value="Rumah dinas">Rumah dinas</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nomor KIP / KKS / KPS (jika ada)</label>
+            <input type="text" name="no_kip" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+        </div>
+      </div>
+
+      <!-- F. KONTAK DARURAT -->
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-lg font-bold text-gray-900 border-b border-gray-300 pb-2 mb-4">F. KONTAK DARURAT</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nama Kontak Darurat</label>
+            <input type="text" name="nama_darurat" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Hubungan dengan Siswa</label>
+            <input type="text" name="hubungan_darurat" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nomor WA / Telepon Darurat</label>
+            <input type="tel" name="wa_darurat" class="mt-1 block w-full rounded-md border-gray-300 border p-2 shadow-sm">
+          </div>
+        </div>
+      </div>
+
+      <!-- G. PERNYATAAN -->
+      <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200 text-sm text-yellow-900">
+        <h3 class="text-lg font-bold text-yellow-900 border-b border-yellow-300 pb-2 mb-3">G. PERNYATAAN ORANG TUA/WALI</h3>
+        <p class="leading-relaxed mb-4">
+          Saya menyatakan bahwa data yang saya isi benar dan dapat dipertanggungjawabkan. Saya bersedia memberitahukan kepada pihak sekolah apabila terdapat perubahan data kontak atau keadaan keluarga.
+        </p>
+        <div class="flex items-start gap-2 mb-4">
+          <input type="checkbox" id="persetujuan" required class="mt-1 rounded border-yellow-400 text-blue-600 focus:ring-blue-500">
+          <label for="persetujuan" class="font-semibold">Saya Setuju dan Menyatakan Data di Atas Adalah Benar. *</label>
+        </div>
+        <div>
+          <label class="block font-medium text-gray-800">Nama Terang Pengisi Formulir *</label>
+          <input type="text" name="nama_pengisi" required class="mt-1 block w-full sm:w-1/2 rounded-md border-gray-300 border p-2 bg-white">
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center pt-4">
+        <button type="submit" id="btnSubmit" class="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg transition duration-200 text-lg">
+          Kirim Data Formulir
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    // TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_lctZp661QwHG_nt9CpDgf3f0-KPEC88RWbI9QLIzFniknBjovRKF_gzOm_RbDHe0/exec";
+
+    document.getElementById("studentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const btn = document.getElementById("btnSubmit");
+      btn.innerText = "Mengirim data...";
+      btn.disabled = true;
+
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }).then(() => {
+        alert("Terima kasih! Data formulir berhasil terkirim dan tersimpan.");
+        document.getElementById("studentForm").reset();
+        btn.innerText = "Kirim Data Formulir";
+        btn.disabled = false;
+      }).catch(err => {
+        alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
+        btn.innerText = "Kirim Data Formulir";
+        btn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
