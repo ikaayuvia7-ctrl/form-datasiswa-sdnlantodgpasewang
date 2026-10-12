@@ -379,15 +379,18 @@
   </div>
 
   <script>
-    // TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_lctZp661QwHG_nt9CpDgf3f0-KPEC88RWbI9QLIzFniknBjovRKF_gzOm_RbDHe0/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_lctZp661QwHG_nt9CPDgf3f0-KPEC88RwbI9QLiZfniknBjovRKF_gzOm_RbDHe0/exec";
 
-    document.querySelector("form").addEventListener("submit", function(e) {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
       
-      const btn = document.getElementById("btnSubmit");
-      btn.innerText = "Mengirim data...";
-      btn.disabled = true;
+      const submitBtn = form.querySelector("button[type='submit']") || document.getElementById("btnSubmit") || document.getElementById("submitBtn");
+      if (submitBtn) {
+        submitBtn.innerText = "Mengirim data...";
+        submitBtn.disabled = true;
+      }
 
       const formData = new FormData(this);
       const data = {};
@@ -400,15 +403,20 @@
         body: JSON.stringify(data)
       }).then(() => {
         alert("Terima kasih! Data formulir berhasil terkirim dan tersimpan.");
-        document.getElementById("studentForm").reset();
-        btn.innerText = "Kirim Data Formulir";
-        btn.disabled = false;
-      }).catch(err => {
+        form.reset();
+        if (submitBtn) {
+          submitBtn.innerText = "Kirim Data Formulir";
+          submitBtn.disabled = false;
+        }
+      }).catch(error => {
         alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
-        btn.innerText = "Kirim Data Formulir";
-        btn.disabled = false;
+        if (submitBtn) {
+          submitBtn.innerText = "Kirim Data Formulir";
+          submitBtn.disabled = false;
+        }
       });
     });
-  </script>
+  }
+</script>
 </body>
 </html>
