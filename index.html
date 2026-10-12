@@ -18,11 +18,11 @@
   <h2 class="text-xl font-bold text-blue-800 tracking-wide uppercase">UPTD SPF SDN LANTO DG PASEWANG</h2>
   <h1 class="text-2xl font-bold text-gray-900 mt-1">FORMULIR DATA SISWA DAN ORANG TUA/WALI</h1>
 </div>
-
+<form novalidate>
 <!-- INPUT TAHUN PELAJARAN -->
 <div class="flex items-center justify-center gap-2 mb-6">
   <label class="font-medium text-gray-700">Tahun Pelajaran:</label>
-  <input type="text" name="tahun_pelajaran" value="2026 / 2027" readonly class="w-36 text-center p-2 border border-gray-300 rounded-lg bg-gray-100 font-semibold text-gray-700">
+  <input type="text" name="tahun_pelaaran" value="2026 / 2027" readonly class="w-36 text-center p-2 border border-gray-300 rounded-lg bg-gray-100 font-semibold text-gray-700">
 </div>
       
       <!-- A. IDENTITAS SISWA -->
@@ -381,42 +381,47 @@
   <script>
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_lctZp661QwHG_nt9CPDgf3f0-KPEC88RwbI9QLiZfniknBjovRKF_gzOm_RbDHe0/exec";
 
-  const form = document.querySelector("form");
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      
-      const submitBtn = form.querySelector("button[type='submit']") || document.getElementById("btnSubmit") || document.getElementById("submitBtn");
-      if (submitBtn) {
-        submitBtn.innerText = "Mengirim data...";
-        submitBtn.disabled = true;
-      }
+  document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById("btnSubmit");
+    if (btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        
+        btn.innerText = "Mengirim data...";
+        btn.disabled = true;
 
-      const formData = new FormData(this);
-      const data = {};
-      formData.forEach((value, key) => data[key] = value);
+        const form = document.querySelector("form") || btn.closest("form") || document;
+        const inputs = form.querySelectorAll("input, select, textarea");
+        const data = {};
 
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      }).then(() => {
-        alert("Terima kasih! Data formulir berhasil terkirim dan tersimpan.");
-        form.reset();
-        if (submitBtn) {
-          submitBtn.innerText = "Kirim Data Formulir";
-          submitBtn.disabled = false;
-        }
-      }).catch(error => {
-        alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
-        if (submitBtn) {
-          submitBtn.innerText = "Kirim Data Formulir";
-          submitBtn.disabled = false;
-        }
+        inputs.forEach(input => {
+          if (input.name || input.id) {
+            const key = input.name || input.id;
+            if (input.type === "radio" || input.type === "checkbox") {
+              if (input.checked) data[key] = input.value;
+            } else {
+              data[key] = input.value;
+            }
+          }
+        });
+
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }).then(() => {
+          alert("Terima kasih! Data formulir berhasil terkirim dan tersimpan.");
+          btn.innerText = "Kirim Data Formulir";
+          btn.disabled = false;
+        }).catch(error => {
+          alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
+          btn.innerText = "Kirim Data Formulir";
+          btn.disabled = false;
+        });
       });
-    });
-  }
+    }
+  });
 </script>
 </body>
 </html>
