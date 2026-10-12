@@ -378,7 +378,7 @@
     </form>
   </div>
 
-  <script>
+<script>
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxjeNumCksvQ-NZ42B5yEH6qY71g01oJGdwcyt1ZyIUdBtWGrd4aEugZIaA-mjebkv8/exec";
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -390,18 +390,15 @@
         btn.innerText = "Mengirim data...";
         btn.disabled = true;
 
-        const form = document.querySelector("form") || btn.closest("form") || document;
-        const inputs = form.querySelectorAll("input, select, textarea");
+        const inputs = document.querySelectorAll("input, select, textarea");
         const data = {};
 
-        inputs.forEach(input => {
-          if (input.name || input.id) {
-            const key = input.name || input.id;
-            if (input.type === "radio" || input.type === "checkbox") {
-              if (input.checked) data[key] = input.value;
-            } else {
-              data[key] = input.value;
-            }
+        inputs.forEach((input, index) => {
+          let key = input.name || input.id || "field_" + index;
+          if (input.type === "radio" || input.type === "checkbox") {
+            if (input.checked) data[key] = input.value;
+          } else {
+            if (input.value !== "") data[key] = input.value;
           }
         });
 
@@ -423,5 +420,3 @@
     }
   });
 </script>
-</body>
-</html>
